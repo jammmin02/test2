@@ -1,16 +1,9 @@
+includes:
+  - vendor/larastan/larastan/extension.neon
+  - phpstan-baseline.neon
+
 parameters:
   level: 6
   paths:
     - app
-    - tests
-  tmpDir: var/phpstan
-  memoryLimit: 1G
-  checkGenericClassInNonGenericObjectType: false
-  checkMissingIterableValueType: false
-  inferPrivatePropertyTypeFromConstructor: true
-  reportUnmatchedIgnoredErrors: true
-  bleedingEdge: true
-  ignoreErrors:
-    - '#Call to an undefined method .*::json\(\)#'
-  bootstrapFiles:
-    - vendor/autoload.php
+  tmpDir: storage/phpstan

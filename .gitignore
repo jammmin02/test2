@@ -2,17 +2,19 @@
 .DS_Store
 Thumbs.db
 
-# PHP / Composer
-/vendor/
-/composer.lock
+# PHP / Composer (라라벨은 backend 폴더 안)
+backend/vendor/
+backend/composer.lock
 
 # 환경변수
+backend/.env
+backend/.env.local
+backend/.env.*.local
 .env
-.env.local
-.env.*.local
 
 # 캐시 / 로그
-/storage/
+backend/storage/*
+!backend/storage/.gitignore
 logs/
 *.log
 
@@ -30,27 +32,36 @@ docker-compose.override.yml
 /mysql_data/
 /postgres_data/
 
+# Nginx 관련
+/nginx/
+/docker/nginx/
+/nginx/logs/
+/nginx/cache/
+/certs/
+*.crt
+*.key
+*.pem
+nginx.conf
+default.conf
+/run/nginx.pid
+/var/run/nginx.pid
+
 # IDE & 편집기
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# 기타 빌드 산출물
-/public/storage
-/public/hot
-/public/mix-manifest.json
+# 기타 빌드 산출물 (라라벨 public)
+backend/public/storage
+backend/public/hot
+backend/public/mix-manifest.json
 
 # Coverage & Reports
 coverage/
 .clover
 .php_cs.cache
 .php-cs-fixer.cache
-
-# composer 관련 파일
-composer.lock
-vendor/
-var/
 .phpunit.result.cache
 
 
